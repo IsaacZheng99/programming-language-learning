@@ -2,13 +2,17 @@
 
 **Knowledge Points**: `pre process`, `compile`, `link`
 
-1. `pre-process` happens before `compile`
+1. **pre-process**: 
 
-2. anything after `#` is `pre-process` statement
+    1. `pre-process` happens before `compile`
 
-3. `Debug` mode is **slower** than `Release` mode because many **optimizations** are shut off but `Debug` mode can help us debug code (we can also change the configuration to do optimizations in the `Ddebug` mode)
+    2. anything after `#` is `pre-process` statement
 
-4. `compile`: `.cpp` files become `.obj` files
+2. **Debug mode and Release mode**: 
+
+    Debug` mode` is **slower** than `Release` mode because many **optimizations** are shut off but `Debug` mode can help us debug code (we can also change the configuration to do optimizations in the `Ddebug` mode)
+
+3. **compile**: `.cpp` files become `.obj` files
 
     1. in the `pre-process` stage, the complier simply "**replace**" (copy, delete, etc.) code
 
@@ -34,7 +38,7 @@
 
     6. `.obj` file: it's a `binary` file and contains the machine code
 
-5. `link`: link `.obj` files and get `.exe` file
+4. **link**: link `.obj` files and get `.exe` file
 
     1. if we check the `.asm` file, we will see some random characters to represent functions and they are indeed the **signatures** of these functions, which is used to find functions in the `linking` process
     2. three ways to solve the **repeated definition** problem
