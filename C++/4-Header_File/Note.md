@@ -1,13 +1,15 @@
 ## 4. Header File
 
-1. `#pragma once`
+**Knowledge Points**: `#pragma once`, `#ifndef`, `#include <> and #include ""`, `.h in header files`
+
+1. **#pragma once**: 
 
     ```c++
     #pragma once  // only include this file once, i.e., prevent including a single header file multiple times to a single translation unit
     // e.g., there are two header files "Log.h" and "Common.h" and "Log.h" includes "Common.h", if we include "Common.h" and "Log.h" in "Main.cpp", "Common.h" will be included twice without "#pragma once"
     ```
 
-2. `#ifndef`
+2. **#ifndef**: 
 
     ```c++
     // we can also use "#ifndef" to make the contents of a single header file be included only once, we call it "header guard"
@@ -20,7 +22,7 @@
     #endif
     ```
 
-3. `<>` and `""` (angle brackets and quotes)
+3. **<> and "" (angle brackets and quotes) in #include**
 
     ```c++
     #include <iostream>  // if the included file is inside one of the include paths
