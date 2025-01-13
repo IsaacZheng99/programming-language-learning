@@ -2,9 +2,9 @@
 
 **Knowledge Points**: `pre process`, `compile`, `link`
 
-1. `pre process` happens before `compile`
+1. `pre-process` happens before `compile`
 
-2. anything after `#` is `pre process` statement
+2. anything after `#` is `pre-process` statement
 
 3. `Debug` mode is **slower** than `Release` mode because many **optimizations** are shut off but `Debug` mode can help us debug code (we can also change the configuration to do optimizations in the `Ddebug` mode)
 
