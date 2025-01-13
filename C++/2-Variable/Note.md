@@ -2,11 +2,15 @@
 
 **Knowledge Points**: `size` of `variables`, `sizeof()`
 
-1. `variables` are stored in memory, which is called `stack` or `heap`
+1. **store variables**: 
 
-2. the only difference of `variables` of `C++` is **size**, i.e., how much the memory does the variable occupy, i.e., how much memory will be allocated when you create a `variable`
+    `variables` are stored in memory, which is called `stack` or `heap`
 
-3. different primitive integer types
+2. **only difference of variables in C++**: 
+
+    the only difference of `variables` of `C++` is **size**, i.e., how much the memory does the variable occupy, i.e., how much memory will be allocated when you create a `variable`
+
+3. **different primitive integer types**: 
 
     ```c++
     char       // 1 byte
@@ -19,7 +23,7 @@
     ...
     ```
 
-4. `char` and `short`
+4. **char and short**: 
 
     ```c++
     // different output based on operator overloading of "operator<<()"
@@ -34,7 +38,7 @@
     std::cout << a3 << std::endl;  // 65
     ```
 
-5. `float` and `double`
+5. **float and double**: 
 
     ```c++
     // add "f" or "F" at the end to make your code: 
@@ -48,7 +52,7 @@
     double d = 5.5;
     ```
 
-6. `bool`
+6. **bool**: 
 
     ```c++
     bool var = true;
@@ -64,7 +68,7 @@
     // one advanced fun trick is to use 1 byte to store 8 "bool" variables
     ```
 
-7. `sizeof()`
+7. **sizeof()**: 
 
     ```c++
     std::cout << sizeof(bool) << std::endl;  // 1
