@@ -1,5 +1,7 @@
 ## 10. Reference
 
+**Knowledge Points**: `reference`, `pass by value, reference, pointer`, `when and how to use reference`
+
 1. **reference**: 
 
     1. `reference` is just **syntax suger** on top of `pointer`
