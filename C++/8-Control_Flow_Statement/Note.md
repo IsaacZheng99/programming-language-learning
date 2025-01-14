@@ -1,5 +1,7 @@
 ## 8. Control Flow Statement
 
+**Knowledge Points**: `continue`, `break`, `return`
+
 1. **continue**:
 
     1. only used in `loop`
