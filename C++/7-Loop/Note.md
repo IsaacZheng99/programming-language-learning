@@ -1,5 +1,7 @@
 ## 7. Loop
 
+**Knowledge Points**: `for`, `while`, `do while`
+
 1. **for**: 
 
     ```c++
