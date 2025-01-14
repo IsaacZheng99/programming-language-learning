@@ -1,6 +1,6 @@
 ## 11. Class
 
-**Knowledge Points**: `class`, `struct`, `visibility`, 
+**Knowledge Points**: `class`, `struct`, `visibility`, `write a C++ class`
 
 1. **visibility**: 
 
@@ -68,6 +68,7 @@
 
 5. **Write a Log class in C++** (check the `Code` part and note that this is not a good code but a simple and logical code)
 
+    1. a good way to create a `class` or design an `API` is by its **usage**
     1. `private int m_LogLevel`: use `m_` to indicate this is a `private member variable` and helps distinguish it wich `local variables`
-
+    
     
