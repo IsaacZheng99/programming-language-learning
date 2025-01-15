@@ -1,6 +1,6 @@
 ## 14. Constructor
 
-**Knowledge Points**: `constructor`, `non-parameter constructor`, `constructor with parameter`, `default constructor`, `if you don't want people create instances`
+**Knowledge Points**: `constructor`, `non-parameter constructor`, `constructor with parameter`, `default constructor`, `if you don't want people to create instances`
 
 1. **what is constructor**: 
 
@@ -130,7 +130,7 @@
 
         `constructor` will not run if we do not instantiate an object, so if we just use a static method from a class, it won't run
 
-    4. **if you don't want people create instances**: 
+    4. **if you don't want people to create instances**: 
 
         1. **make the constructor private**: 
 
