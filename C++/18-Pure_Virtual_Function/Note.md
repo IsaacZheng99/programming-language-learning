@@ -1,5 +1,7 @@
 ## 18. Pure Virtual Function
 
+**Knowledge Points**: `pure virtual function`
+
 1. **what is pure virtual function**: 
 
     1. a `pure virtual function` in `C++` is essentially the same as an `abstract method` or an `interface` in other languages such as `Java` or `C#`
