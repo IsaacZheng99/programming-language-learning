@@ -1,7 +1,7 @@
 #include <iostream>
 
 
-class Printable
+class Printable  // we can call this class as "interface"
 {
 public:
 	virtual std::string GetClassName() = 0;  // pure virtual function
@@ -41,7 +41,7 @@ public:
 	}
 };
 
-void PrintClassName(Printable* obj)
+void PrintClassName(Printable* obj)  // just set the type of the parameter as "Printable", i.e., the "interface" type
 {
 	std::cout << obj->GetClassName() << std::endl;
 }
