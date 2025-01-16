@@ -95,6 +95,21 @@
     }
     ```
 
+    it's better to add the key word `override` to make it more readable, avoid spelling problem like `Getname()` and avoid forgetting the `virutal` key word in the base class
+
+    ```c++
+    class Player : public Entity
+    {
+    private:
+        const std::string m_Name;
+    public:
+        Player(const std::string& name)
+            : m_Name(name) {}
+      
+        std::string GetName() override {return m_Name;}
+    };
+    ```
+
 4. **cost of virtual function**:
 
     `virtual functions` aren't free, there are two runtime costs associated with virtual functions 
