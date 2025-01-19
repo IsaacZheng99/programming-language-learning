@@ -22,6 +22,15 @@
     double* nptr5 = nullptr;
     ```
 
+    `type` of `nullptr`: `std::nullptr_t`
+
+    ```c++
+    int main()
+    {
+        std::cout << typeid(nullptr).name() << std::endl;  // std::nullptr_t
+    }
+    ```
+
 3. **dereference**: 
 
     ```c++
