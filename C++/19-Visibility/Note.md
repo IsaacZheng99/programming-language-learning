@@ -2,7 +2,7 @@
 
 **Knowledge Points**: `visibility`, `visibility of class members`, `visibility of inheritance`, `friend`
 
-1. **what is vidibility**: 
+1. **what is visibility**: 
 
     `vidibility` just means who can see, use or call and it has **no** effects on how your program acutually runs and **no** effects on program performance
 
