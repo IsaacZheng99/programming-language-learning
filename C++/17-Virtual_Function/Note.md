@@ -118,7 +118,9 @@
 
         we have the additional memory that is required in order for us to store that `v table` so that we can `dispatch` to the correct function, and memory that includes a `member pointer` in the actual base class that points to the `v table`
 
-    2. very time we call a virtual function, we have to go through that table to determine which function to actually map
+    2. **calling cost**: 
 
+        every time we call a virtual function, we have to go through that table to determine which function to actually map
+    
     `virtual functions` generally brings a little overhead but it helps a lot
 
