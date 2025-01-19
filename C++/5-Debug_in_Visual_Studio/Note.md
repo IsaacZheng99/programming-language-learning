@@ -1,6 +1,6 @@
 ## 5. Debug in Visual Studio
 
-**Knowledge Points**: 
+**Knowledge Points**: `commands of the debugger`, `difference of Debug mode and Release mode`
 
 1. **three commands of the Debugger**: 
 
