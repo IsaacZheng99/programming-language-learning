@@ -54,7 +54,7 @@
                 const char* name2 = "xiao\0li";
                 std::cout << name2 << std::endl;  // xiao
                 std::cout << strlen(name2) << std::endl;  // 4
-                std::cout << sizeof(name2) << std::endl;  // 4
+                std::cout << sizeof(name2) << std::endl;  // 4 (note that "4" is the size of the "char*")
             }
             ```
 
