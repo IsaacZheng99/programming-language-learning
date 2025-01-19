@@ -15,7 +15,7 @@
     3. **extern**: 
 
         ```c++
-        //"extern" means it's going to look for the "s_Variable" in an external translation unit, which is called external lincage or external linking 
+        //"extern" means it's going to look for the "s_Variable" in an external translation unit, which is called external linkage or external linking 
         // Mian.cpp
         extern int s_Variable;
         // Static.cpp
@@ -50,7 +50,7 @@
             
             void Print(Entity& e)  // The "Print()" method in "class Entity" is just like this, which has a "hidden parameter", which is the "this" pointer
             {
-                std::cout << x << ", " << y << std::endl;
+                std::cout << e.x << ", " << e.y << std::endl;
             }
             ```
 
@@ -126,8 +126,25 @@
         }
         ```
 
+        ```c++
+        void Function()
+        {
+            static int i = 0;
+            i = 0;
+            i++;
+            std::cout << i << std::endl;
+        }
+        
+        int main()
+        {
+            Function();  // 1
+            Function();  // 1
+            Function();  // 1
+        }
+        ```
+    
         it's like a `global variable`, but we can refer to `global variable` outside the `function`: 
-
+    
         ```c++
         int i = 0;
         
@@ -145,11 +162,11 @@
           Function();  // 12
         }
         ```
-
+    
     2. **singleton**: (note that the code here is just a simple example to illustrate the usage of `static local variable` but not a serious `Singleton` implementation)
-
+    
         1. by using a `static member variable`: `private static Singleton*` or `private static Singleton`
-
+    
             ```c++
             // version 1:
             class Singleton
@@ -197,9 +214,9 @@
                 Singleton::Get().Hello();
             }
             ```
-
+    
         2. by using a `static local variable`
-
+    
             ```c++
             class Singleton
             {
@@ -219,8 +236,3 @@
             }
             ```
 
-            
-
-        
-
-    
