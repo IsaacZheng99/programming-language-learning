@@ -37,7 +37,7 @@
     std::cout << *p << std::endl;  // Wrong!
     *p = 9;  // Wrong!
     
-    // This will cause "compiling error" because the compiler doesn't know how much memory should beread or allocated as the type of the pointer is "void".
+    // This will cause "compiling error" because the compiler doesn't know how much memory should be read or allocated as the type of the pointer is "void".
     ```
 
     `dereference` a `nullptr`: 
