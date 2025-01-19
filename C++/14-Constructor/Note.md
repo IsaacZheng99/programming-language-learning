@@ -40,7 +40,7 @@
     }
     ```
 
-    if you call a `method` of `Entity` first, and then access `e.x`, it will work well with `MSVC`: 
+    if you call a `method` of `Entity` first, and then access `e.x` and `e.y`, it will work well with `MSVC`: 
 
     ```c++
     class Entity
