@@ -4,7 +4,7 @@
 
 1. **visibility**: 
 
-    by default, a `class` makes everything private, which means only functions inside that class can access those variables
+    by default, a `class` makes everything `private`, which means only functions inside that class can access those variables
 
 2. **what class can do**: 
 
@@ -27,7 +27,7 @@
         };
         ```
 
-        a stand-alone function: 
+        a stand-alone `function`: 
 
         ```c++
         void Move(Player& player, int xa, int ya)
@@ -43,7 +43,7 @@
 
 3. **only difference between class and struct technically**: 
 
-    the default of `visibility` in `class` is `private`, but the default in `struct` is `public`, the only reason why `struct` still exists in `C++` is because of the backwards commatibility that it wants to maintain with `C`
+    the default of `visibility` in `class` is `private`, but the default in `struct` is `public`, the only reason why `struct` still exists in `C++` is because of the backwards compatibility that it wants to maintain with `C`
 
     in fact, we can use `#define struct class` to solve this problem to some extent , but we need to be careful with the visibility
 
@@ -57,7 +57,7 @@
     {
       float x, y;
       
-      // we can have some methods, which just manipulates these variables but not does other things
+      // we can have some methods, which just manipulate these variables but not do other things
       void Add(const& Vec2 other)
       {
         x += other.x;
@@ -71,4 +71,4 @@
     1. a good way to create a `class` or design an `API` is by its **usage**
     1. `private int m_LogLevel`: use `m_` to indicate this is a `private member variable` and helps distinguish it wich `local variables`
     
-    
+
