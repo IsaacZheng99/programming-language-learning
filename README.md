@@ -9,5 +9,5 @@
 - C++
     - Notes on learning `C++` (based on the courses given by `The Cherno`)
     - Codes run on `Visual Studio Community 2022`, compiled by `MSVC` with `ISO C++20 Standard (/std:c++20)`
-    - Codes run in `Debug` mode and `x86` platform if no additional information
+    - Codes run in `Debug` mode and `x86` platform if no additional information (**Note**: From chapter `28.New`, the platform will be changed to `x64`, and the former notes will be updated later.)
 
