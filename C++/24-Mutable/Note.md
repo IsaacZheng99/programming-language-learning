@@ -1,6 +1,6 @@
 ## 24. Mutable
 
-**Knowledge Points**: 
+**Knowledge Points**: `mutable with const in methods`, `mutable with lambda`
 
 1. **mutable works with const in methods**: 
 
