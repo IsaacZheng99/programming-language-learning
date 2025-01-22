@@ -1,5 +1,7 @@
 ## 38. Create Library used by Multiple Projects
 
+**Knowledge Points**: `why need this`, `settings about creating library and multuple projects`
+
 1. **why need this**: 
 
     if you are working on anything sizeable, this is important not only beacause it can create `module` or `library` and **reuse** them, but also **mix languages**
@@ -37,3 +39,4 @@
     5. **run the program and check the result**: 
 
         you can copy the `Game.exe` file and paste to somewhere like the `Desktop` and just double click it, it will run successfully because we just use `static linking` here
+
