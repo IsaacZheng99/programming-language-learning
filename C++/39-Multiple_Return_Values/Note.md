@@ -1,4 +1,4 @@
-## 39. How to Deal with Multiple Return Values
+## 39. Multiple Return Values
 
 **Knowledge Points**: `different ways to handle multiple return values with same type or different types`
 
