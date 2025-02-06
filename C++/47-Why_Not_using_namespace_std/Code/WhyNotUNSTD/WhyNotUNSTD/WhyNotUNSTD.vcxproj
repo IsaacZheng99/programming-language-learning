@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{eddd3ef0-4c47-4e88-9852-c48d616e11b4}</ProjectGuid>
+    <ProjectGuid>{e02ebfa9-b37d-4477-8e41-096ffff014f4}</ProjectGuid>
     <RootNamespace>WhyNotUNSTD</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
