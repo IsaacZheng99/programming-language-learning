@@ -2,12 +2,12 @@
 
 **Knowledge Points**: `how to use function pointer: auto (implicit conversion), void(*ptrName)(), typedef,  using`, `function as a parameter`, `lambda`
 
-#### 1. what is function pointer
+### 1. what is function pointer
 
 1. `raw-style function pointer` comes from `C`
 2. `function pointer` is just a way to assign a `function` to a `variable`
 
-#### 2. how to use function pointer
+### 2. how to use function pointer
 
 here we have a `function`: 
 
@@ -130,7 +130,7 @@ void HelloWorld()
     }
     ```
 
-#### 3. whye need function pointer
+### 3. why need function pointer
 
 when we need a `function` parameter
 
