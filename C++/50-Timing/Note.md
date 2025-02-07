@@ -17,7 +17,7 @@ int main()
 
     auto start = std::chrono::high_resolution_clock::now();
     std::this_thread::sleep_for(1s);
-    auto end = std::chrono::high_resolution_clock.now();
+    auto end = std::chrono::high_resolution_clock::now();
 
     std::chrono::duration<float> duration = end - start;
     std::cout << duration.count() << "s" << std::endl;  // 1.0073s
@@ -36,12 +36,12 @@ struct Timer
 
     Timer()
     {
-    	start = std::chrono::high_resolution_clock.now();  // similar with scoped pointer
+    	start = std::chrono::high_resolution_clock::now();  // similar with scoped pointer
     }
 
     ~Timer()
     {
-        end = std::chrono::high_resolution_clock.now();
+        end = std::chrono::high_resolution_clock::now();
         duration = start - end;
 
         float ms = duration.count() * 1000.0f;
