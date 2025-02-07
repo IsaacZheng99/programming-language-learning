@@ -22,6 +22,7 @@ void DoWork()
 
 int main()
 {
+	// 2. an example: we want to print "Working..." all the time untill we press the "enter"
 	std::thread worker(DoWork);
 
 	std::cin.get();  // manually block the main thread
