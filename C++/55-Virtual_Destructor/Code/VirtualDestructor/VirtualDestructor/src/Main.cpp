@@ -1,6 +1,7 @@
 #include <iostream>
 
 
+// 2. some examples
 // 2.1 the normal case
 class Base
 {
@@ -67,6 +68,7 @@ public:
 
 int main()
 {
+	// 2. some examples
 	// 2.1 the normal case
 	Base* base = new Base();
 	delete base;
