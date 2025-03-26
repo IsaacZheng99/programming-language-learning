@@ -83,9 +83,9 @@ The benefit of these `C++` style casts is that it's more **readable** than the `
         ```c++
         int main()
         {
-            Base* base = new Base();
+            Base* base = new Derived();
             Derived* derived = static_cast<Derived*>(base);
-            AnotherClass anotherClass = static_cast<anotherClass*>(base);  // Not safe!
+            AnotherClass* anotherClass = static_cast<AnotherClass*>(base);  // Not safe in downcasting becasue it won't check whether the "base" pointer is pointing to an "AnotherClass" object and in this case it will cause "undefined behavior"
         }
         ```
 
@@ -95,7 +95,7 @@ The benefit of these `C++` style casts is that it's more **readable** than the `
         int main()
         {
             Derived* derived = new Derived();
-            AnotherClass anotherClass = static_cast<anotherClass*>(derived);  // Wrong! compile error
+            AnotherClass anotherClass = static_cast<AnotherClass*>(derived);  // Wrong! compile error
         }
         ```
 
