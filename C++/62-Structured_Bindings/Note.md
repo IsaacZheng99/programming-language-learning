@@ -1,6 +1,6 @@
 ## 62. Structured Bindings
 
-**Knowledge Points**: 
+**Knowledge Points**: `structured bindings`, `struct vs. std::tuple<> vs. structured bindings`, `std::tie`
 
 ### 1. what is structured bindings
 
