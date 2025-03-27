@@ -123,7 +123,7 @@ there is a `function` which "returns" two `std::string` objects
 
 ### 3. return a std::tuple<>
 
-`std::tuple<>`: contains `x` amount of `variables` and **doesn't** care about the `types`
+`std::tuple<>`: contains `x` amount of `variables` and **doesn't** care about the `types`, meaning the `variables` can have arbitrary types and we use template to control
 
 ```c++
 std::tuple<std::string, std::string> ReturnTwoStrings()
