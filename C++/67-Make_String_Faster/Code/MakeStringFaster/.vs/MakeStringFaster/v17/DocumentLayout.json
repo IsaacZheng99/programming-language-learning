@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\github\\programming-language-learning\\C\u002B\u002B\\67-Make_String_Faster\\Code\\MakeStringFaster\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7D7FCFB3-4719-49C7-8403-1535FC30C896}|MakeStringFaster\\MakeStringFaster.vcxproj|F:\\github\\programming-language-learning\\C\u002B\u002B\\67-Make_String_Faster\\Code\\MakeStringFaster\\MakeStringFaster\\src\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7D7FCFB3-4719-49C7-8403-1535FC30C896}|MakeStringFaster\\MakeStringFaster.vcxproj|solutionrelative:MakeStringFaster\\src\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Main.cpp",
+              "DocumentMoniker": "F:\\github\\programming-language-learning\\C\u002B\u002B\\67-Make_String_Faster\\Code\\MakeStringFaster\\MakeStringFaster\\src\\Main.cpp",
+              "RelativeDocumentMoniker": "MakeStringFaster\\src\\Main.cpp",
+              "ToolTip": "F:\\github\\programming-language-learning\\C\u002B\u002B\\67-Make_String_Faster\\Code\\MakeStringFaster\\MakeStringFaster\\src\\Main.cpp",
+              "RelativeToolTip": "MakeStringFaster\\src\\Main.cpp",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAiwDMAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-29T03:38:06.402Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
