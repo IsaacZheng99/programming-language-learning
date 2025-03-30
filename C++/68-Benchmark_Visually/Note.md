@@ -1,6 +1,6 @@
 ## 68. Benchmark Visually
 
-**Knwoledge Points**: 
+**Knwoledge Points**: `Chrome Tracing`
 
 ### 1. Chrome Tracing
 
@@ -199,7 +199,7 @@ control the `timer` by `macro` because the `timer` is just for benchmarking and 
 ```c++
 #define PROFILING 1
 #if PROFILING
-#define PROFILE_SCOPE(name) InstrumentationTimer timer##__LINE__(name)  // "timer##__LINE__" can give different names to these "timers"
+#define PROFILE_SCOPE(name) InstrumentationTimer timer##__LINE__(name)  // "timer##__LINE__" can give different names to these "timer variables"
 #else
 #define PROFILE_SCOPE(name)
 void Function1()
@@ -348,16 +348,6 @@ in a real production enviroment, we need to use `namespace` to include the `func
 #define PROFILE_FUNCTION()
 
 namespace Benchmark {
-    
-    void RunBenchmarks()
-    {
-        PROFILE_FUNCTION();
-
-        std::cout << "Running Benchmarks...\n";
-
-        PrintFunction(2);
-        PrintFunction();
-    }
 
     void PrintFunction(int value)
     {
@@ -374,6 +364,16 @@ namespace Benchmark {
         for (int i = 0; i < 1000; i++)
             std::cout << "Hello World #" << sqrt(i) << std::endl;
     }
+    
+    void RunBenchmarks()
+    {
+        PROFILE_FUNCTION();
+
+        std::cout << "Running Benchmarks...\n";
+
+        PrintFunction(2);
+        PrintFunction();
+    }
 }
 
 int main()
@@ -387,7 +387,198 @@ int main()
 // void __cdecl Benchmark::PrintFunction(void);
 ```
 
+#### 7. multi-thread
+
+now we want to leverage `multi-threading` to run the two `functions`
+
+##### 1. session
+
+we need to handle `thread id` data
+
+```c++
+struct MultiThreadProfileResult
+{
+    std::string Name;
+    long long Start, End;
+    uint32_t ThreadID;  // thread id
+};
+
+class Instrumentor
+{
+private:
+    // ...
+public:
+    // ...
+    void WriteMultiThreadProfile(const MultiThreadProfileResult& result)
+    {
+        if (m_ProfileCount++ > 0)
+            m_OutputStream << ",";
+        
+        std::string name = result.Name;
+        std::replace(name.begin(), name.end(), '"', '\'');
+        
+        m_OutputStream << "{";
+        m_OutputStream << "\"cat\":\"function\",";
+        m_OutputStream << "\"dur\":" << (result.End - result.Start) << ',';
+        m_OutputStream << "\"name\":\"" << name << "\",";
+        m_OutputStream << "\"ph\":\"X\",";
+        m_OutputStream << "\"pid\":0,";
+        m_OutputStream << "\"tid\":" << result.ThreadID << ",";  // record the thread id
+        m_OutputStream << "\"ts\":" << result.Start;
+        m_OutputStream << "}";
+        
+        m_OutputStream.flush();
+    }
+    
+    // ...
+}
+```
+
+##### 2. timer
+
+we need to get the `thread id` data in the `timer`
+
+```c++
+class InstrumentationTimer
+{
+private:
+    const char* m_Name;
+    std::chrono::time_point<std::chrono::steady_clock> m_StartTimepoint;
+    bool m_Stopped;
+public:
+    InstrumentationTimer(const char* name)
+        : m_Name(name), m_Stopped(false)
+    {
+		m_StartTimepoint = std::chrono::high_resolution_clock::now();
+    }
+    
+    ~InstrumentationTimer()
+    {
+        if (!m_Stopped)
+			Stop();
+    }
+    
+    void Stop()
+    {
+        auto endTimepoint = std::chrono::high_resolution_clock::now();
+        
+        long long start = std::chrono::time_point_cast<std::chrono::microseconds>(m_StartTimepoint).time_since_epoch().count();
+        long long end = std::chrono::time_point_cast<std::chrono::microseconds>(endTimepoint).time_since_epoch().count();
+        
+        std::cout << m_Name << ": " << end - start << "us\n";
+        
+        uint32_t threadID = std::hash<std::thread::id>{}(std::this_thread::get_id());  // record the thread id
+        Instrumentor::Get().WriteProfile({ m_Name, start, end, threadID });
+        
+        m_Stopped = true;
+    }
+};
+```
+
+##### 3. benchmarking
+
+in the `Benchmarks()` function, we use `multi-thread` to run the two `functions`
+
+```c++
+#define PROFILING 1
+#if PROFILING
+#define PROFILE_SCOPE(name) InstrumentationTimer timer##__LINE__(name)
+#define PROFILE_FUNCTION() PROFILE_SCOPE(__FUNCSIG__)
+#else
+#define PROFILE_SCOPE(name)
+#define PROFILE_FUNCTION()
+
+namespace Benchmark {
+
+    void PrintFunction(int value)
+    {
+        PROFILE_FUNCTION();
+
+        for (int i = 0; i < 1000; i++)
+            std::cout << "Hello World #" << (i + value) << std::endl;
+    }
+
+    void PrintFunction()
+    {
+        PROFILE_FUNCTION();
+
+        for (int i = 0; i < 1000; i++)
+            std::cout << "Hello World #" << sqrt(i) << std::endl;
+    }
+    
+    void RunBenchmarks()
+    {
+        PROFILE_FUNCTION();
+
+        std::cout << "Running Benchmarks...\n";
+
+        std::thread a([]() { PrintFunction(2); });
+        std::thread b([]() { PrintFunction(); });
+        
+        a.join();
+        b.join();
+    }
+}
 
 
+int main()
+{
+    Instrumentor::Get().BeginSession("Profile", "src/json/results.json");
+    RunBenchmarks();
+    Instrumentor::Get().EndSession();
+}
+```
 
+#### 8. multi-thread and call a function
+
+in `2.7` we have three threads and now we want get rid of `thread b` and see the `call stack` from the initial `RunBenchmarks thread`, which is just our main `thread`
+
+```c++
+#define PROFILING 1
+#if PROFILING
+#define PROFILE_SCOPE(name) InstrumentationTimer timer##__LINE__(name)
+#define PROFILE_FUNCTION() PROFILE_SCOPE(__FUNCSIG__)
+#else
+#define PROFILE_SCOPE(name)
+#define PROFILE_FUNCTION()
+
+namespace Benchmark {
+
+    void PrintFunction(int value)
+    {
+        PROFILE_FUNCTION();
+
+        for (int i = 0; i < 1000; i++)
+            std::cout << "Hello World #" << (i + value) << std::endl;
+    }
+
+    void PrintFunction()
+    {
+        PROFILE_FUNCTION();
+
+        for (int i = 0; i < 1000; i++)
+            std::cout << "Hello World #" << sqrt(i) << std::endl;
+    }
+    
+        void RunBenchmarks()
+    {
+        PROFILE_FUNCTION();
+
+        std::cout << "Running Benchmarks...\n";
+
+        std::thread a([]() { PrintFunction(2); });
+
+        PrintFunction();
+        
+        a.join();
+    }
+}
+
+int main()
+{
+    Instrumentor::Get().BeginSession("Profile", "src/json/results.json");
+    RunBenchmarks();
+    Instrumentor::Get().EndSession();
+}
+```
 
