@@ -27,7 +27,7 @@
             Entity e1 = (std::string)"xiaoli";
             Entity e2 = Entity("xiaoli");
             Entity e3 = Entity(25);
-            Entity e4 = 25；  // implicit conversion from "int" to "Entity"
+            Entity e4 = 25;  // implicit conversion from "int" to "Entity"
         }
         ```
 
@@ -211,5 +211,4 @@
       Entity e4(25);
     }
     ```
-
 
