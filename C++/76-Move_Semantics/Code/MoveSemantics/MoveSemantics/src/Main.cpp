@@ -27,7 +27,7 @@ public:
 	~String1()
 	{
 		printf("Destroyed\n");
-		delete m_Data;
+		delete[] m_Data;
 	}
 
 	void Print()
@@ -94,7 +94,7 @@ public:
 	~String2()
 	{
 		printf("Destroyed\n");
-		delete m_Data;
+		delete[] m_Data;
 	}
 
 	void Print()
