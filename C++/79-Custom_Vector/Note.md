@@ -1055,3 +1055,8 @@ int main()
 // Destroy
 // Destroy
 ```
+
+### 3. TODO
+
+`TODO`: `std::vector<>::erase() function`, remove element, add or pop element in the middle, iterator of the container
+
