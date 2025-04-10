@@ -103,7 +103,7 @@ private:
 		// this will cause "Exception" because we didn't call 
 		// the constructor of the element and 
 		// thus the "std::string _Tidy_deallocate()" function will goes wrong 
-		// (see more information in "82. Custom Iterator")
+		// (see more information in "81. Custom Iterator")
 
 	// here is same as "~Vector()"
 		for (size_t i = 0; i < m_Size; i++)
