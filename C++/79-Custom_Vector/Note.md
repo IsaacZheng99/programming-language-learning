@@ -973,7 +973,7 @@ private:
         
         for (size_t i = 0; i < m_Size; i++)
             newBlock[i] = std::move(m_Data[i]);
-        	// in fact this is wrong, if we are using "Vector<std::string>", this will cause "Exception" because we didn't call the "constructor" of the element and thus the "std::string _Tidy_deallocate()" function will goes wrong (see more information in "82. Custom Iterator")
+        	// in fact this is wrong, if we are using "Vector<std::string>", this will cause "Exception" because we didn't call the "constructor" of the element and thus the "std::string _Tidy_deallocate()" function will goes wrong (see more information in "81. Custom Iterator")
         
         //delete[] m_Data;
         for (size_t i = 0; i < m_Size; i++)
