@@ -1,20 +1,23 @@
 ## 8. Control Flow Statement
 
-**Knowledge Points**: `continue`, `break`, `return`
+**Knowledge Points**:
 
-1. **continue**:
+1. `continue`
+2. `break`
+3. `return`
 
-    1. only used in `loop`
-    2. go to the next iteration
+### 1. continue
 
-2. **break**: 
+1. Only used in `loop`.
+2. Go to the next iteration.
 
-    1. used in `loop` and `switch` statement
-    2. get out of the `loop` or `switch`
+### 2. break
 
-3. **return**: 
+1. Used in `loop` and `switch` statements.
+2. Get out of the `loop` or `switch`.
 
-    1. used in anywhere
-    2. get out of the function
+### 3. return
 
-    
+1. Used in anywhere.
+2. Get out of the `function`.
+
