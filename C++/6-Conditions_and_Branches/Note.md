@@ -1,4 +1,4 @@
-## 6. Conditional
+## 6. Conditions and Branches
 
 **Knowedge Points**:
 
