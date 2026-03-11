@@ -50,7 +50,7 @@ In the `link` process, we `link` the `.obj` files and get `.exe` file.
 
     ```c++
     // Log.h
-    #pragma
+    #pragma once
     void Log(const char* message)
     {
         std::cout << message << std::endl;
@@ -90,14 +90,14 @@ In the `link` process, we `link` the `.obj` files and get `.exe` file.
 
     2. The `inline` key word: `inline` will directly **replace** the call of function with the `function` body.
 
-    3. Move the `definition` of the `function` to other file and just use the definition once. 
+    3. Move the `definition` of the `function` to other file and just use the `definition` once. 
 
         1. The above problem is essentially because we put the `Log()` function in two `translation units`, we can simply remain the `declaration` and move the `definition` to the `Log.cpp` file.
         2. Therefore, we always seperate the `declaration` and the `definition`, e.g., we can put the `declaration` in the `.h` files and the `definition` in the `.cpp` files.
 
         ```c++
         // Log.h
-        #pragma
+        #pragma once
         void Log(const char* message);
         
         // Log.cpp
