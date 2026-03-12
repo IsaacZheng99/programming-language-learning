@@ -95,7 +95,8 @@ std::cout << sizeof(a) << std::endl;  // 4
 ### 7. *, &
 
 ```c++
-int* a = 1;  // asterisk
-int& b = 2;  // ampersand
+int a = 1;
+int* ptr = &a;  // asterisk
+int& b = a;  // ampersand
 ```
 
