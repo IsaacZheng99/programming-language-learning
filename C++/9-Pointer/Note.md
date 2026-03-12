@@ -5,7 +5,7 @@
 1. `pointer: address, type of pointer`
 2. `null pointer: 0, NULL, nullptr; type of nullptr: std::nullptr_t`
 3. `void pointer`
-4. `dereference: deference a void* pointer; deference a null pointer`
+4. `dereference: dereference a void* pointer; dereference a null pointer`
 5. `create data: stack, heap, static storage area`
 6. `double pointer, triple pointer`
 
@@ -61,7 +61,7 @@ std::cout << typeid(nullptr).name() << std::endl;  // std::nullptr_t
 
 ### 3. Dereference
 
-1. We can `deference` a `pointer` to access the data.
+1. We can `dereference` a `pointer` to access the data.
 
     ```c++
     int var = 8;
