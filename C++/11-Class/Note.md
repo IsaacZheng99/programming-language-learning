@@ -4,7 +4,7 @@
 
 1. `visibility: private by default`
 2. `what can a class do: syntax suger`
-3. `calss and struct: visibility; POD`
+3. `class and struct: visibility; POD`
 4. `write a C++ class: class Log`
 
 ### 1. Visibility
