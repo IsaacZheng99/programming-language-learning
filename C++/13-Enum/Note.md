@@ -1,23 +1,28 @@
 ## 13. Enum
 
-**Knowledge Points**: `enum`, `enum class`, `value of enum`, `type of enum`,  `difference between enum and enum classs`
+**Knowledge Points**:
 
-1. **what is enum**: 
+1. `enum`
+2. `value of enum`
+3. `type of enum`
+4. `difference between enum and enum classs`
 
-    `enum` is just a way to give a name to a set of values, so we don't have to keep dealing with integers
+### 1. What is enum
 
-2. **value of enum**: 
+`enum` is just a way to give a **name** to a set of values, so we don't have to keep dealing with **integers**.
 
-    begin with `0` in default: 
+### 2. Value of enum
+
+1. By default, it begins with `0`: 
 
     ```c++
-    enum Example2
+    enum Example1
     {
-        A1 = 1, B1, C1  // 1, 2, 3
+        A1, B1, C1  // 0, 1, 2
     };
     ```
 
-    explicitly set the first value: 
+2. We can explicitly set the first value: 
 
     ```c++
     enum Example2
@@ -26,7 +31,7 @@
     };
     ```
 
-    explicitly set all the values: 
+3. We can also explicitly set all the values: 
 
     ```c++
     enum Example3
@@ -35,7 +40,7 @@
     };
     ```
 
-    the value of an `enum-type` data is limited: 
+4. The value of an `enum-type` data is limited: 
 
     ```c++
     int main()
@@ -43,40 +48,43 @@
         Example1 value1 = Example1::B1;
         Example1 value2 = 1;  // Wrong! Compiling error.
         Example1 value3 = C1;
+        Example1 value3 = static_cast<Example1>(1);
     }
     ```
 
-3. **type of enum**: 
+### 3. Type of enum 
 
-    must be `integer` types, `int`, `char`, `unsigned char`... we can save memory by using `char` instead of `int` if it's fine
+`enum` must be `integer` types: `int`, `char`, `unsigned char`... we can save memory by using `char` instead of `int` if it's fine.
+
+```c++
+enum Example4  // by default, int
+{
+    A4, B4, C4
+};
+
+enum Example5: char
+{
+    A5, B5, C5
+};
+
+enum Example6
+{
+    A6 = 0.1, B6, C6  // Wrong! Compiling error.
+};
+
+int main()
+{
+    std::cout << sizeof(Example4) << std::endl;  // 4
+    std::cout << sizeof(Example5) << std::endl;  // 1
+}
+```
+
+### 4. enum class
+
+1. An example of `enum class`:
 
     ```c++
-    enum Example4  // by default, int
-    {
-        A4, B4, C4
-    };
-    
-    enum Example5: char
-    {
-        A5, B5, C5
-    };
-    
-    enum Example6:
-    {
-        A6 = 0.1, B6, C6  // Wrong! Compiling error.
-    };
-    
-    int main()
-    {
-        std::cout << sizeof(Example4) << std::endl;  // 4
-        std::cout << sizeof(Example5) << std::endl;  // 1
-    }
-    ```
-
-4. **enum class**: 
-
-    ```c++
-    enum class Example7:
+    enum class Example7
     {
         A7, B7, C7
     };
@@ -90,22 +98,23 @@
     }
     ```
 
-5. **enum vs. enum class**
+2. `enum` vs. `enum class`:
 
-    1. **scope**: 
+    1. scope: 
 
-        `enum` has weak scope, we can directly use `Example1 value1 = A1;` and the names of the `variables` **shouldn't** be the same across different `enums`
+        `enum` has weak scope, we can directly use `Example1 value1 = A1;` and the names of the `variables` **shouldn't** be the same across different `enums`.
 
-        `enum class` has strong scope, we have to use `Example7 value7 = Example7::A7` and the names of the `variables` across `enum class` can be the same
+        `enum class` has strong scope, we have to use `Example7 value7 = Example7::A7` and the names of the `variables` across `enum class` can be the same.
 
-    2. **type safety**: 
+    2. type safety: 
 
-        `enum` is not type safety, we can assign an `enum` to an integer: `int a = Example1::A1;`
+        `enum` is not type safety, we can assign an `enum` to an integer: `int a = Example1::A1;`.
 
-        `enum class` is type safety, we need to explicitly cast
+        `enum class` is type safety, we need to explicitly cast: `int a = static_cast<int>(Example7::A7)`
 
-    3. **comparison**: 
+    3. comparison: 
 
-        we can directly compare value of two `enums`, but we can't do that for `enum class`
+        We can directly compare the value of two `enums`, but we can't do that for `enum classes`.
 
-6. **improve class Log with enum** (check the `Code` part)
+3. **improve class Log with enum** (check the `Code` part)
+
