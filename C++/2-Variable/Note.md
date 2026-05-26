@@ -84,12 +84,12 @@ std::cout << c << std::endl;  // 1
 
 ```c++
 std::cout << sizeof(bool) << std::endl;  // 1
-std::cout << sizeof bool << std::endl;  // 1, no brackets is also fine
 std::cout << sizeof(int) << std::endl;  // 4
 std::cout << sizeof(double) << std::endl;  // 8
 
 int a = 1;
 std::cout << sizeof(a) << std::endl;  // 4
+std::cout << sizeof a << std::endl;  // 1, no brackets is also fine
 ```
 
 ### 7. *, &
