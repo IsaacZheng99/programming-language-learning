@@ -82,7 +82,7 @@ std::cout << typeid(nullptr).name() << std::endl;  // std::nullptr_t
 
     ```c++
     int* nptr1 = 0;
-    std::cout << *nptr1 << std::endl;  // Wrong! Read data by a "void*"
+    std::cout << *nptr1 << std::endl;  // Wrong!
     
     int* nptr2 = nullptr;
     std::cout << *nptr2 << std::endl;  // Wrong!
