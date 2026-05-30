@@ -79,3 +79,50 @@ struct Vec2
 1. A good way to create a `class` or design an `API` is by its **usage**.
 1. `Private member variable`: for `private int m_LogLevel`, use `m_` to indicate this is a `private member variable` and help distinguish it from `local variables`.
 
+```c++
+#include <iostream>
+
+class Log
+{
+public:
+	const int LogLevelError = 0;
+	const int LogLevelWarning = 1;
+	const int LogLevelInfo = 2;
+private:
+	int m_LogLevel = LogLevelInfo;
+public:
+	void SetLevel(int level)
+	{
+		m_LogLevel = level;
+	}
+
+	void Error(const char* message)
+	{
+		if (m_LogLevel >= LogLevelError)
+			std::cout << "[ERROR]: " << message << std::endl;
+	}
+
+	void Warn(const char* message)
+	{
+		if (m_LogLevel >= LogLevelWarning)
+			std::cout << "[WARNING]: " << message << std::endl;
+	}
+
+	void Info(const char* message)
+	{
+		if (m_LogLevel >= LogLevelInfo)
+			std::cout << "[INFO]: " << message << std::endl;
+	}
+};
+
+int main()
+{
+	// Note that this is not a good code but a simple and logical code
+	Log log;
+	log.SetLevel(log.LogLevelWarning);
+	log.Error("Hello!");
+	log.Warn("Hello!");
+	log.Info("Hello!");
+}
+```
+
